@@ -12,9 +12,12 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repository-url>
-cd blue-green-project
+git clone https://github.com/soumik5/Blue-green-Deployment-Container-Orchestration.git
+
+cd Blue-green-Deployment-Container-Orchestration/
 ```
+<img width="875" height="175" alt="image" src="https://github.com/user-attachments/assets/eb8803fc-e442-469e-8974-aff140b5131b" />
+<img width="920" height="272" alt="image" src="https://github.com/user-attachments/assets/ebabed2b-2c1a-499d-b362-a64b4309f1bb" />
 
 ### 2. Local Development
 
@@ -25,6 +28,8 @@ cd blue-green-project
 cd backend
 npm install
 ```
+<img width="987" height="437" alt="image" src="https://github.com/user-attachments/assets/cb52a441-a888-4855-aa52-b25f1c0a6045" />
+
 3. Create `.env` file with:
 ```
 PORT=5000
