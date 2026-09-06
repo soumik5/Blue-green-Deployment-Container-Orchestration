@@ -33,12 +33,15 @@ npm install
 3. Create `.env` file with:
 ```
 PORT=5000
-MONGO_URI=your-mongodb-connection-string
+MONGO_URI=mongodb+srv://handyguy495_db_user:<pwd>@clusternew5.o35be6r.mongodb.net/blue-green
 ```
+<img width="997" height="570" alt="image" src="https://github.com/user-attachments/assets/4ce34ef1-7aba-432f-a4e6-99fb2ec22379" />
+
 4. Start backend server
 ```bash
 npm start
 ```
+<img width="976" height="151" alt="image" src="https://github.com/user-attachments/assets/9d0a09ec-a4e8-442c-aecf-6b13ffffad43" />
 
 #### Frontend Setup
 1. Setup Blue Frontend
@@ -46,30 +49,68 @@ npm start
 cd frontend-blue
 npm install
 ```
+<img width="1017" height="481" alt="image" src="https://github.com/user-attachments/assets/264e3e83-f196-4d70-a34a-4a2bdacb24ba" />
+
 2. Create `.env` file:
 ```
 PORT=3100
 ```
+<img width="995" height="182" alt="image" src="https://github.com/user-attachments/assets/4bb01355-6011-4585-9292-e3af30f6d5bf" />
+
 3. Start blue frontend
 ```bash
 npm start
 ```
+<img width="1002" height="192" alt="image" src="https://github.com/user-attachments/assets/2cfc17c3-b65b-467f-8f3d-8351d3edaf8e" />
+<img width="1427" height="937" alt="image" src="https://github.com/user-attachments/assets/d2ab8592-ebb3-4a52-b9bc-ba3985d546c9" />
+<img width="1470" height="627" alt="image" src="https://github.com/user-attachments/assets/4d6c1fcd-cfd2-484a-b2ed-3e58df0b15b1" />
 
-3. Repeat similar steps for Green Frontend (with PORT=3200)
+
+4. Setup Green Frontend
+```bash
+cd frontend-green
+npm install
+```
+<img width="1036" height="442" alt="image" src="https://github.com/user-attachments/assets/623790a0-ce29-448a-a38c-2f3daf2bc710" />
+
+5. Create `.env` file:
+```
+PORT=3200
+```
+<img width="1002" height="182" alt="image" src="https://github.com/user-attachments/assets/d5716e17-55f2-4559-bc2a-21599161a878" />
+
+
+6.  Start Green frontend
+```bash
+npm start
+```
+<img width="1037" height="147" alt="image" src="https://github.com/user-attachments/assets/61c20ea0-54f5-43d6-a424-971b755adefa" />
+<img width="1851" height="877" alt="image" src="https://github.com/user-attachments/assets/d4cd05ca-64dd-4e01-9dd4-2c5d32fcf486" />
+<img width="1680" height="872" alt="image" src="https://github.com/user-attachments/assets/e1ea4c54-5b1c-40b9-8c03-0f5367029180" />
+
+
 
 ### 3. Dockerization
 
 #### Build Docker Images
+
+Create a Dockerfile for the backend service
+<img width="770" height="285" alt="image" src="https://github.com/user-attachments/assets/9b848bad-1cef-4c1e-ae0b-dd524b9b941f" />
+
+Create Dockerfiles for both frontend services
+<img width="892" height="242" alt="image" src="https://github.com/user-attachments/assets/91a453ad-e617-434c-841d-d33b991d66e8" />
+<img width="821" height="222" alt="image" src="https://github.com/user-attachments/assets/f8d276eb-7c7f-45c9-86fa-5e7e3b12701b" />
+
+Create a docker-compose.yml file that runs all services together 
+<img width="1131" height="857" alt="image" src="https://github.com/user-attachments/assets/ef4e05a7-cc03-4d11-8dbd-d7e89dc69e2c" />
+
+Build and run the containers locally to verify functionality 
 ```bash
-# Build Backend Image
-docker build -t your-username/backend:v1 ./backend
-
-# Build Blue Frontend Image
-docker build -t your-username/frontend-blue:v1 ./frontend-blue
-
-# Build Green Frontend Image
-docker build -t your-username/frontend-green:v1 ./frontend-green
+docker compose up -d
 ```
+<img width="1491" height="566" alt="image" src="https://github.com/user-attachments/assets/a48371be-4e59-463f-ba7f-2ced320450ac" />
+<img width="906" height="222" alt="image" src="https://github.com/user-attachments/assets/a33fe193-5811-4b00-8161-bb69b3ef6d88" />
+
 
 ### 4. Kubernetes Deployment
 
