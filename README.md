@@ -119,6 +119,8 @@ docker compose up -d
 ```bash
 minikube start
 ```
+<img width="950" height="540" alt="image" src="https://github.com/user-attachments/assets/05311061-2c83-44e9-960b-2cfaa00b928b" />
+
 
 2. Enable Required Addons
 ```bash
