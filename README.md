@@ -156,12 +156,17 @@ Your `frontend-service.yaml` should:
 ```bash
 # Apply all manifests
 kubectl apply -f k8s/
+```
+<img width="936" height="162" alt="image" src="https://github.com/user-attachments/assets/f29e570d-60c2-480d-9b48-5d0909234723" />
+
 
 # Verify deployments
+```
 kubectl get deployments
 kubectl get services
 kubectl get pods
 ```
+<img width="1492" height="380" alt="image" src="https://github.com/user-attachments/assets/d7f94113-fb44-4898-aa92-bb934377fd44" />
 
 ### 7. Blue-Green Switching
 
