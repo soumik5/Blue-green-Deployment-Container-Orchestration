@@ -127,16 +127,24 @@ minikube start
 minikube addons enable metrics-server
 minikube addons enable ingress
 ```
+<img width="1106" height="402" alt="image" src="https://github.com/user-attachments/assets/684127ef-bf23-4733-95fc-f72b12b29c98" />
+
 
 ### 5. Create Kubernetes Manifest Files
 
 #### Required Manifest Files
+Created k8s directory
+pushed locally built images to dockerhub
+<img width="1005" height="971" alt="image" src="https://github.com/user-attachments/assets/39fc827f-28b6-43ef-b4ce-29b2da449def" />
+
 Create following files in `k8s/` directory:
 - `backend-deployment.yaml`
 - `frontend-blue-deployment.yaml`
 - `frontend-green-deployment.yaml`
 - `frontend-service.yaml`
 - `ingress.yaml`
+
+Above files have been created under k8s repository. Please refer to k8s folder of my Github repo for detaiils.
 
 #### Service File Key Concepts
 Your `frontend-service.yaml` should:
