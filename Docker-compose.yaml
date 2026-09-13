@@ -1,0 +1,31 @@
+name: blue-green-deployment
+services:
+  backend:
+    image: backend:v1
+    build: ./backend
+    container_name: backend_container
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+
+    
+
+  frontend-blue:
+    image: frontend-blue:v1
+    build: ./frontend-blue
+    container_name: frontend_blue_container
+    ports:
+      - "3100:3100"
+    env_file:
+      - ./frontend-blue/.env
+
+
+  frontend-green:
+    image: frontend-green:v1
+    build: ./frontend-green
+    container_name: frontend_green_container
+    ports:
+      - "3200:3200"
+    env_file:
+      - ./frontend-green/.env
