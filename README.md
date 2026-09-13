@@ -180,28 +180,47 @@ kubectl patch service frontend-service -p '{"spec":{"selector":{"version":"green
 # Switch back to Blue
 kubectl patch service frontend-service -p '{"spec":{"selector":{"version":"blue"}}}'
 ```
+Since frontend-blue and frontend-green pods are using separate ports then we have to use below patch command for 
 
 2. Detailed Patch Command
 ```bash
-kubectl patch service frontend-service --type='merge' -p '{
+$ kubectl patch service frontend-service --type='merge' -p '{
   "spec":{
     "selector":{
       "app":"frontend",
       "version":"green"
-    }
+    },
+    "ports":[
+      {
+        "port":80,
+        "targetPort":3200,
+        "protocol":"TCP"
+      }
+    ]
   }
 }'
 ```
+you can now see traffic is switched to frontend-green pods
+<img width="1657" height="956" alt="image" src="https://github.com/user-attachments/assets/93d70ed8-ef83-498a-b4cb-a836cfabeba3" />
 
 ### 8. Verification
 - Check service endpoints
 - Verify traffic routing
 - Monitor application logs
 
+All the screenshots are attached herewith
+
+<img width="1166" height="367" alt="image" src="https://github.com/user-attachments/assets/4b6ea948-5229-4680-846d-55b09d56ffea" />
+<img width="967" height="652" alt="image" src="https://github.com/user-attachments/assets/a6eac347-6bd0-4257-8f34-162076372dde" />
+
 ### Troubleshooting
 - `kubectl get pods` - Check pod status
 - `kubectl logs <pod-name>` - View logs
 - `kubectl describe service frontend-service` - Service details
+
+All the screenshots are attached herewith.
+<img width="942" height="881" alt="image" src="https://github.com/user-attachments/assets/183d4307-80cd-4eb2-8919-707dd3cb663c" />
+
 
 ### Cleanup
 ```bash
